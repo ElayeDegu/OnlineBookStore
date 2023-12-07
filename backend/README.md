@@ -14,4 +14,9 @@ npm install
 npm run dev
 ```
 
+- Run swagger 
+
+```bash
+http://localhost:8000/api-docs/
+```
 - View the docs from [here](http://localhost:8000/api-docs)

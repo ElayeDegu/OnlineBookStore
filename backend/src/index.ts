@@ -15,9 +15,9 @@ const dbConfig = async () => {
       type: "postgres",
       host: "localhost",
       port: 5432,
-      username: "postgres",
-      password: "Esku2212",
-      database: "HypeTest",
+      username: "<YOUR-USERNAME>",
+      password: "<YOUR-PASSWORD>",
+      database: "<YOUR-DATABASE>",
       entities: ["src/entities/*.ts"],
       synchronize: true,
     });
