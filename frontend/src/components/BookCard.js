@@ -1,32 +1,35 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-import React from "react";
-import { Card, Col, Row } from "antd";
-import flower from '../images/flowe.png'
+import React from 'react';
+import { Card, Col} from 'antd';
+import flower from '../images/flowe.png';
+
 const { Meta } = Card;
 
 const BookCard = ({ book, onPurchase }) => {
-  return (
-    <div className="book-card">
+ const renderCardContent = () => (
+    <div>
+      <p>By: {book.writer}</p>
+      <p>Price: {book.price}</p>
+      <p>Tag: {book.tag}</p>
+      <button onClick={onPurchase}>Order Book</button>
+    </div>
+ );
+
+ return (
+    <Col xs={24} sm={12} md={8} lg={6}>
       <Card
-        style={{
-          width: 200,
-          marginBottom: "30px",
-        }}
+        hoverable
+        style={{ width: 200, marginBottom: '30px' }}
         cover={
-          <img src={book.image && book.image.length ? book.image[0].url : flower} />
+          <img
+            alt={book.title}
+            src={book.image && book.image.length ? book.image[0].url : flower}
+          />
         }
       >
-        <h3>{book.title}</h3>
-        <p>By: {book.writer}</p>
-        <p>Price: {book.price}</p>
-        <p>Tag: {book.tag}</p> 
-        <button onClick={onPurchase}>Order Book</button>
+        <Meta title={book.title} description={renderCardContent()} />
       </Card>
-    </div>
-  );
+    </Col>
+ );
 };
 
 export default BookCard;
-
