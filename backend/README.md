@@ -14,9 +14,18 @@ npm install
 npm run dev
 ```
 
-- Run swagger 
+- Swagger Documentation
 
-```bash
+```
 http://localhost:8000/api-docs/
 ```
+
+- Add your Database Configuration in
+
+```
+backend/src/index.ts
+backend/model/model.js
+backend/src/config/database.js
+```
+
 - View the docs from [here](http://localhost:8000/api-docs)
